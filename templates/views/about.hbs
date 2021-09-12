@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>About</title>
+    <link rel="shortcut icon" href="/images/weather.png" type="image/x-icon">
+    <!-- Starting with a / (as opposed to ./ gives absolute path) -->
+    <!-- But the web server only has access to public folder so is absolute relative to that -->
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <div class="main-content">
+      {{!-- Way to render a partial in handlebars --}}
+      {{>header}}
+      <img class="img-portrait" src="/images/robot.png" alt="profile picture of a robot">
+    </div>
+    {{>footer}}
+  </body>
+</html>
