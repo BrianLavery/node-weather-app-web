@@ -8,6 +8,10 @@ const forecast = require('./utils/forecast')
 // Express function setup
 const app = express()
 
+// Heroku gives us a port value - we get it from environment object
+// We use an OR statement so it still works locally
+const port = process.env.PORT || 3000
+
 // Define paths for Express and Handlebars config
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -107,8 +111,8 @@ app.get('*', (req, res) => {
 
 
 // Start server using this one app
-// We pass in the port as the argument
-app.listen(3000, () => {
+// We pass in the port as the argument that we defined above
+app.listen(port, () => {
   // Message is for person running the app
-  console.log('Server started on port 3000')
+  console.log(`Server started on port ${port}`)
 })
